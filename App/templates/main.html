@@ -1,0 +1,100 @@
+<!doctype html>
+<style>
+form {
+    margin: auto;
+    width: 35%;
+    background-color: #aba4fc;
+}
+
+.result {
+    margin: auto;
+    width: 35%;
+    border: 1px solid #00008B;
+}
+
+</style>
+<head>
+    <title> Прогнозирование соотношения матрица-наполнитель </title>>
+</head>
+
+<form action="{{url_for('main')}}" method="POST">
+    <fieldset>
+        <legend> Введите значения </legend>
+        Плотность, кг/м3
+        <input name="p1" type="number"
+        required>
+    <br>
+    <br>
+        Модуль упругости, ГПа
+        <input name="p2" type="number"
+        required>
+    <br>
+    <br>
+        Количество отвердителя, м.%
+        <input name="p3" type="number"
+        required>
+    <br>
+    <br>
+         Содержание эпоксидных групп,%_2
+        <input name="p4" type="number"
+        required>
+    <br>
+    <br>
+            Температура вспышки, С_2
+            <input name="p5" type="number"
+            required>
+    <br>
+    <br>
+
+        Поверхностная плотность, г/м2
+        <input name="p6" type="number"
+        required>
+    <br>
+    <br>
+    
+      Модуль упругости при растяжении, ГПа
+        <input name="p7" type="number"
+        required>
+    <br>
+    <br>
+        Прочность при растяжении, МПа
+        <input name="p8" type="number"
+         required>
+    <br>
+    <br>
+    
+         Потребление смолы, г/м2
+        <input name="p9" type="number"
+        required>
+    <br>
+    <br>
+    
+        Угол нашивки
+        <input name="p10" type="number"
+        required>
+    <br>
+    <br>
+        Шаг нашивки
+        <input name="p11" type="number"
+        required>
+    <br>
+    <br>
+        Плотность нашивки
+        <input name="p12" type="number"
+        required>
+    <br>
+    <br>
+    <input type="submit">
+    </fieldset>
+
+</form>
+
+<div class="result" align=" center">
+    {% if result %}
+    <br>
+    <p style="font-size:50px">
+        Результат прогноза
+    </p>
+    <p style="font-size:50px">{{result}}</p>
+    {% endif %}
+</div>
